@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.2hoch5.ucn</string>
+	<key>connections</key>
+	<dict>
+		<key>07EB77F6-4C59-4356-A8BC-18FAC3EB8393</key>
+		<array/>
+		<key>28C5A064-4A2B-4E2A-BEFD-F3251539DA9D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD5D9030-6E7D-4056-ADD9-ADA72D3F23E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string>Copy Character {var:symbol}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>77A646E1-A809-459D-9086-973FD02B4F3D</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy CodePoint {var:cp}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A5B18F6-96CF-4B70-8733-C7E30A4AE95B</string>
+				<key>modifiers</key>
+				<integer>1572864</integer>
+				<key>modifiersubtext</key>
+				<string>Copy HTML {var:html}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8172BFD4-9E87-41CB-86BF-F1157F3505AA</string>
+				<key>modifiers</key>
+				<integer>786432</integer>
+				<key>modifiersubtext</key>
+				<string>Copy JSON {var:json}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5DA10F96-648A-42A2-A016-703930A41073</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open URL {var:www}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5DA10F96-648A-42A2-A016-703930A41073</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>810ADDF2-E3AA-4671-8867-B25D66E4DB41</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>77A646E1-A809-459D-9086-973FD02B4F3D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>03EE45D9-D5E4-4BC3-B44E-BDFD98D7310A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8172BFD4-9E87-41CB-86BF-F1157F3505AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51E8C5F6-D291-417C-952D-20FBAA6D3485</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9A5B18F6-96CF-4B70-8733-C7E30A4AE95B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59EB0534-853C-4BCE-B462-79E4BC547DF2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A6EF14A5-D96A-439C-8136-42FE15E30989</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD5D9030-6E7D-4056-ADD9-ADA72D3F23E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string>Copy Character {var:symbol}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>77A646E1-A809-459D-9086-973FD02B4F3D</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy CodePoint {var:cp}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A5B18F6-96CF-4B70-8733-C7E30A4AE95B</string>
+				<key>modifiers</key>
+				<integer>1572864</integer>
+				<key>modifiersubtext</key>
+				<string>Copy HTML {var:html}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8172BFD4-9E87-41CB-86BF-F1157F3505AA</string>
+				<key>modifiers</key>
+				<integer>786432</integer>
+				<key>modifiersubtext</key>
+				<string>Copy JSON {var:json}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5DA10F96-648A-42A2-A016-703930A41073</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open URL {var:www}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CD5D9030-6E7D-4056-ADD9-ADA72D3F23E0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>07EB77F6-4C59-4356-A8BC-18FAC3EB8393</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mathias Gumz</string>
+	<key>description</key>
+	<string>Search Unicode Characters</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Unicode Character Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{var:symbol}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>07EB77F6-4C59-4356-A8BC-18FAC3EB8393</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:trigger_pf}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>if [ ${#1} -gt 2 ]; then
+  
+#!/bin/bash
+
+	read -ra filters -d '' &lt;&lt;&lt;"$1"
+	args=( )
+
+	for f in "${filters[@]}" ; do
+    		args+=("-filter.starts-with")
+    		args+=("$f")
+	done
+
+	./ucn.darwin.$(uname -m) -ofmt.alfred ${args[@]} -limit 20
+
+else 
+	echo '{"items": []}'
+fi
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search Unicode Names</string>
+				<key>title</key>
+				<string>Search Unicode Names</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A6EF14A5-D96A-439C-8136-42FE15E30989</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>CD5D9030-6E7D-4056-ADD9-ADA72D3F23E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{var:cp}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>03EE45D9-D5E4-4BC3-B44E-BDFD98D7310A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:trigger_ff}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>
+if [ ${#1} -gt 2 ]; then
+
+	read -ra filters -d '' &lt;&lt;&lt;"$1"
+	args=( )
+
+	for f in "${filters[@]}" ; do
+    		args+=("-filter.fuzzy")
+    		args+=("$f")
+	done
+
+	./ucn.darwin.$(uname -m) -ofmt.alfred ${args[@]} -limit 20
+else 
+	echo '{"items": []}'
+fi
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Unicode Fuzzy Search</string>
+				<key>title</key>
+				<string>Unicode Fuzzy Search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>28C5A064-4A2B-4E2A-BEFD-F3251539DA9D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>77A646E1-A809-459D-9086-973FD02B4F3D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{var:html}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>59EB0534-853C-4BCE-B462-79E4BC547DF2</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>9A5B18F6-96CF-4B70-8733-C7E30A4AE95B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{var:html}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>51E8C5F6-D291-417C-952D-20FBAA6D3485</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>8172BFD4-9E87-41CB-86BF-F1157F3505AA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>810ADDF2-E3AA-4671-8867-B25D66E4DB41</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:www}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5DA10F96-648A-42A2-A016-703930A41073</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Unicode Character Search
+
+This workflow provide means to search for Unicode Characters. The found characters can be copied to the clipboard either directly or as various variants like HTML entities or JSON encoded strings.
+
+![Search Unicode Characters](sshot-fs8.png)
+
+
+
+## Links
+
+* https://github.com/mgumz/ucn</string>
+	<key>uidata</key>
+	<dict>
+		<key>03EE45D9-D5E4-4BC3-B44E-BDFD98D7310A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>note</key>
+			<string>Copy CodePoint</string>
+			<key>xpos</key>
+			<real>670</real>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>07EB77F6-4C59-4356-A8BC-18FAC3EB8393</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>note</key>
+			<string>Copy Character</string>
+			<key>xpos</key>
+			<real>670</real>
+			<key>ypos</key>
+			<real>65</real>
+		</dict>
+		<key>28C5A064-4A2B-4E2A-BEFD-F3251539DA9D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>51E8C5F6-D291-417C-952D-20FBAA6D3485</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>note</key>
+			<string>Copy JSON</string>
+			<key>xpos</key>
+			<real>670</real>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>59EB0534-853C-4BCE-B462-79E4BC547DF2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>note</key>
+			<string>Copy HTML</string>
+			<key>xpos</key>
+			<real>670</real>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>5DA10F96-648A-42A2-A016-703930A41073</key>
+		<dict>
+			<key>xpos</key>
+			<real>270</real>
+			<key>ypos</key>
+			<real>670</real>
+		</dict>
+		<key>77A646E1-A809-459D-9086-973FD02B4F3D</key>
+		<dict>
+			<key>xpos</key>
+			<real>395</real>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>810ADDF2-E3AA-4671-8867-B25D66E4DB41</key>
+		<dict>
+			<key>xpos</key>
+			<real>670</real>
+			<key>ypos</key>
+			<real>640</real>
+		</dict>
+		<key>8172BFD4-9E87-41CB-86BF-F1157F3505AA</key>
+		<dict>
+			<key>xpos</key>
+			<real>360</real>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
+		<key>9A5B18F6-96CF-4B70-8733-C7E30A4AE95B</key>
+		<dict>
+			<key>xpos</key>
+			<real>490</real>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
+		<key>A6EF14A5-D96A-439C-8136-42FE15E30989</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>CD5D9030-6E7D-4056-ADD9-ADA72D3F23E0</key>
+		<dict>
+			<key>xpos</key>
+			<real>435</real>
+			<key>ypos</key>
+			<real>95</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>uc</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Trigger Partial Filter</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>trigger_pf</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>ucf</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Trigger Fuzzy Filter</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>trigger_ff</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://2hoch5.com</string>
+</dict>
+</plist>
