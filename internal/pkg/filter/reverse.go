@@ -1,11 +1,15 @@
 package filter
 
-import "slices"
+import (
+	"slices"
+
+	uc "github.com/mgumz/ucn/internal/pkg/unicode"
+)
 
 // Reverse reverses the order of the given runes
-func Reverse(runes []rune, reverse bool) []rune {
+func Reverse(entries []uc.Entry, reverse bool) []uc.Entry {
 	if reverse {
-		slices.Reverse(runes)
+		slices.Reverse(entries)
 	}
-	return runes
+	return entries
 }

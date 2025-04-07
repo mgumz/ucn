@@ -4,32 +4,33 @@ import (
 	"sort"
 
 	fuzzy "github.com/lithammer/fuzzysearch/fuzzy"
-	rn "golang.org/x/text/unicode/runenames"
+
+	uc "github.com/mgumz/ucn/internal/pkg/unicode"
 )
 
 // Fuzzy returns all runes matching the provided fuzzy filter
-func Fuzzy(runes []rune, filter string) []rune {
+func Fuzzy(entries []uc.Entry, filter string) []uc.Entry {
 
 	if filter == "" {
-		return runes
+		return entries
 	}
 
 	names := []string{}
-	for _, r := range runes {
-		names = append(names, rn.Name(r))
+	for i, _ := range entries {
+		names = append(names, entries[i].Name)
 	}
 
 	matches := fuzzy.RankFindNormalizedFold(filter, names)
 	sort.Sort(matches)
 
-	mrunes := []rune{}
+	filtered := []uc.Entry{}
 	for i := range matches {
 		// Rank.OriginalIndex points to the index in "names",
 		// which itself is the "named" representation of
 		// "runes" … so the OriginalIndex should work in both
 		// slices
-		mrunes = append(mrunes, runes[matches[i].OriginalIndex])
+		filtered = append(filtered, entries[matches[i].OriginalIndex])
 	}
 
-	return mrunes
+	return filtered
 }

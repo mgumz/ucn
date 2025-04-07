@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	rn "golang.org/x/text/unicode/runenames"
+	uc "github.com/mgumz/ucn/internal/pkg/unicode"
 )
 
 var (
@@ -12,20 +12,20 @@ var (
 )
 
 // Partial returns all runes matching the provided partial filter
-func Partial(runes []rune, filter string) []rune {
+func Partial(entries []uc.Entry, filter string) []uc.Entry {
 
 	if filter == "" {
-		return runes
+		return entries
 	}
 
 	filter = strings.ToLower(filter)
-	matches := []rune{}
-	for _, r := range runes {
-		n := strings.ToLower(rn.Name(r))
+	matches := []uc.Entry{}
+	for _, e := range entries {
+		n := strings.ToLower(e.Name)
 		words := wsRE.Split(n, -1)
 		for i := range words {
 			if strings.Contains(words[i], filter) {
-				matches = append(matches, r)
+				matches = append(matches, e)
 				break
 			}
 		}

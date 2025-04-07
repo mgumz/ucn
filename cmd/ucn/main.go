@@ -4,13 +4,11 @@ import (
 	"flag"
 	"os"
 
-	rt "golang.org/x/text/unicode/rangetable"
-	rn "golang.org/x/text/unicode/runenames"
-
 	"github.com/mgumz/ucn/internal/pkg/print"
+	uc "github.com/mgumz/ucn/internal/pkg/unicode"
 )
 
-type filterFunc func([]rune) []rune
+type filterFunc func([]uc.Entry) []uc.Entry
 
 func main() {
 
@@ -22,23 +20,13 @@ func main() {
 	flag.Parse()
 
 	// input
-	runes := initRunes()
+	entries := uc.Entries()
 
 	// transform
 	for _, f := range filters {
-		runes = f(runes)
+		entries = f(entries)
 	}
 
 	// output
-	printer(os.Stdout, runes)
-}
-
-func initRunes() []rune {
-
-	runes := []rune{}
-	table := rt.Assigned(rn.UnicodeVersion)
-	rt.Visit(table, func(r rune) {
-		runes = append(runes, r)
-	})
-	return runes
+	printer(os.Stdout, entries)
 }

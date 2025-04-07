@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	rn "golang.org/x/text/unicode/runenames"
+	uc "github.com/mgumz/ucn/internal/pkg/unicode"
 )
 
 type jsonEntry struct {
@@ -17,13 +17,14 @@ type jsonEntry struct {
 	WWW    string `json:"www"`
 }
 
-func JSON(w io.Writer, runes []rune) {
+func JSON(w io.Writer, entries []uc.Entry) {
 
-	entries := []jsonEntry{}
-	for _, r := range runes {
-		entries = append(entries, jsonEntry{
+	j := []jsonEntry{}
+	for _, entry := range entries {
+		r := entry.Rune()
+		j = append(j, jsonEntry{
 			Symbol: string(r),
-			Name:   rn.Name(r),
+			Name:   entry.Name,
 			CP:     fmt.Sprintf("%U", r),
 			HTML:   runeToHTML(r),
 			JSON:   fmt.Sprintf("\\u%04x", r),
@@ -33,5 +34,5 @@ func JSON(w io.Writer, runes []rune) {
 	enc := json.NewEncoder(w)
 	enc.SetEscapeHTML(false)
 	enc.SetIndent("  ", " ")
-	enc.Encode(entries)
+	enc.Encode(j)
 }

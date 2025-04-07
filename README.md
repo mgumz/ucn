@@ -143,7 +143,7 @@ Count the number of embedded Unicode symbols:
 
 ```shell
 $>  ucn | wc -l
- 288767
+ 40074
 ```
 
 Limit the available runes to the first 1000, then filter for "pi":

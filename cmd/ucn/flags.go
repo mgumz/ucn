@@ -6,6 +6,7 @@ import (
 
 	"github.com/mgumz/ucn/internal/pkg/filter"
 	"github.com/mgumz/ucn/internal/pkg/print"
+	uc "github.com/mgumz/ucn/internal/pkg/unicode"
 )
 
 const (
@@ -35,29 +36,29 @@ func initFlags(fs *flag.FlagSet, filters *[]filterFunc, printer *print.Func) {
 
 	// filters
 	fs.Func("filter.partial", flagFilterPF, func(f string) error {
-		*filters = append(*filters, func(runes []rune) []rune {
-			return filter.Partial(runes, f)
+		*filters = append(*filters, func(entries []uc.Entry) []uc.Entry {
+			return filter.Partial(entries, f)
 		})
 		return nil
 	})
 
 	fs.Func("filter.fuzzy", flagFilterFF, func(f string) error {
-		*filters = append(*filters, func(runes []rune) []rune {
-			return filter.Fuzzy(runes, f)
+		*filters = append(*filters, func(entries []uc.Entry) []uc.Entry {
+			return filter.Fuzzy(entries, f)
 		})
 		return nil
 	})
 
 	fs.Func("filter.starts-with", flagFilterStartsWith, func(f string) error {
-		*filters = append(*filters, func(runes []rune) []rune {
-			return filter.StartsWith(runes, f)
+		*filters = append(*filters, func(entries []uc.Entry) []uc.Entry {
+			return filter.StartsWith(entries, f)
 		})
 		return nil
 	})
 
 	fs.Func("reverse", flagFilterReverse, func(f string) error {
-		*filters = append(*filters, func(runes []rune) []rune {
-			return filter.Reverse(runes, true)
+		*filters = append(*filters, func(entries []uc.Entry) []uc.Entry {
+			return filter.Reverse(entries, true)
 		})
 		return nil
 	})
@@ -67,8 +68,8 @@ func initFlags(fs *flag.FlagSet, filters *[]filterFunc, printer *print.Func) {
 		if err != nil {
 			return err
 		}
-		*filters = append(*filters, func(runes []rune) []rune {
-			return filter.Limit(runes, int(limit))
+		*filters = append(*filters, func(entries []uc.Entry) []uc.Entry {
+			return filter.Limit(entries, int(limit))
 		})
 		return nil
 	})

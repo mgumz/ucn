@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	rn "golang.org/x/text/unicode/runenames"
+	uc "github.com/mgumz/ucn/internal/pkg/unicode"
 )
 
 // https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
@@ -45,10 +45,10 @@ type asfi struct {
 // AlfredJSON prints given runes to io.Writer in
 // the JSON flavor suitable for alfredapp.com
 // (where it is useful in Alfred Workflows)
-func AlfredJSON(w io.Writer, runes []rune) {
+func AlfredJSON(w io.Writer, entries []uc.Entry) {
 	result := asf{}
-	for _, r := range runes {
-		n := rn.Name(r)
+	for _, entry := range entries {
+		r := entry.Rune()
 		h := runeToHTML(r)
 		u := fmt.Sprintf(baseWWWURL, r)
 		item := asfi{
@@ -72,7 +72,7 @@ func AlfredJSON(w io.Writer, runes []rune) {
 			},
 
 			//
-			Title:    fmt.Sprintf("%c - %s", r, n),
+			Title:    fmt.Sprintf("%c - %s", r, entry.Name),
 			SubTitle: fmt.Sprintf("%U - %s - %s", r, h, u),
 		}
 		// item.Text.Copy = item.Title
