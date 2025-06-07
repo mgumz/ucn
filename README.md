@@ -5,10 +5,11 @@ is https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt.
 
 ## Usage
 
-    $> ucn [FLAGS]
+    $> ucn [FLAGS] [CP...]
 
 Prints Unicode symbols to Stdout. All processing remains local, no external
-service is triggered.
+service is triggered. Any non-flag argument provided is used to filter the
+built in code points.
 
 ### Flags
 
@@ -130,6 +131,13 @@ $> ucn -filter.partial math -filter.partial "pi" -limit 5
 '𝛡'    1d6e1    U+1D6E1    &#1d6e1;    \\u1d6e1    MATHEMATICAL BOLD PI SYMBOL
 '𝛱'    1d6f1    U+1D6F1    &#1d6f1;    \\u1d6f1    MATHEMATICAL ITALIC CAPITAL PI
 '𝜋'    1d70b    U+1D70B    &#1d70b;    \\u1d70b    MATHEMATICAL ITALIC SMALL PI
+```
+
+Print info about code point 1D6B7:
+
+```shell
+ucn 1D6D1
+'𝛑'    1d6d1    U+1D6D1    &#1d6d1;    \\u1d6d1    MATHEMATICAL BOLD SMALL PI
 ```
 
 Search for "upward arrows":
