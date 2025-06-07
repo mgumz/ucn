@@ -12,27 +12,32 @@ service is triggered.
 
 ### Flags
 
-    -omf.alfred
+    -ofmt.alfred
         use special JSON format ready to be used in http://alfredapp.com
     -ofmt.etab (default)
-   	    use Elastic Tabstops (default)
+        use Elastic Tabstops (default)
     -ofmt.json
         use JSON to print the symbols
     -ofmt.tsv
         use tab-separated values
 
-    -filter.fuzzy value
-   	    fuzzy filter all symbol names for <value>
     -limit value
-   	    limit results to <value> symbols
-    -filter.partial value
-   	    filter all symbol names for a partial match on <value>
-    -reverse value
-   	    reverse list of symbols
-    -filter.starts-with value
-   	    filter all symbol names for the ones which starts-with <value>
+        limit results to <value> symbols
 
-    -v	print version and exit
+    -filter.fuzzy value
+        fuzzy filter all symbol names for <value>
+    -filter.partial value
+        filter all symbol names for a partial match on <value>
+    -filter.starts-with value
+        filter all symbol names for the ones which starts-with <value>
+
+    -reverse value
+        reverse list of symbols
+
+    -license 
+        print license information and exit
+    -v 
+        print version and exit
 
 The filter flags `-filter.*`, `-limit` and `-reverse` can be given multiple
 times: they are applied in the order they are provided. See Examples down below.
@@ -143,7 +148,7 @@ Count the number of embedded Unicode symbols:
 
 ```shell
 $>  ucn | wc -l
- 40074
+40074
 ```
 
 Limit the available runes to the first 1000, then filter for "pi":
