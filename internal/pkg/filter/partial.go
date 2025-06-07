@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	wsRE = regexp.MustCompile("\\s+")
+	wsRE = regexp.MustCompile(`\s+`)
 )
 
 // Partial returns all runes matching the provided partial filter

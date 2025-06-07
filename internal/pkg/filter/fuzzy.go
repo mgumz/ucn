@@ -16,7 +16,7 @@ func Fuzzy(entries []uc.Entry, filter string) []uc.Entry {
 	}
 
 	names := []string{}
-	for i, _ := range entries {
+	for i := range entries {
 		names = append(names, entries[i].Name)
 	}
 
