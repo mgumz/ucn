@@ -139,9 +139,14 @@ bin/ucn.darwin.amd64: bin/ucn-$(VERSION).darwin.amd64
 bin/ucn.darwin.arm64: bin/ucn-$(VERSION).darwin.arm64
 	cp $< $@
 
+
+ALFRED_FILES=info.plist sshot-fs8.png icon.png
+
+releases/ucn-$(VERSION).alfredworkflow:
 releases/ucn-$(VERSION).alfredworkflow: bin/ucn.darwin.amd64
 releases/ucn-$(VERSION).alfredworkflow: bin/ucn.darwin.arm64
 releases/ucn-$(VERSION).alfredworkflow:
+	mkdir -p releases
 	rm -f $@
-	( cd extra/ucn.alfredworkflow && zip -v -9 -r ../../$@ . )
+	( cd extra/ucn.alfredworkflow && zip -v -9 -r ../../$@ $(ALFRED_FILES) )
 	( cd bin && zip -v -9 ../$@ ucn.darwin.amd64 ucn.darwin.arm64 )
