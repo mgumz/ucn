@@ -59,6 +59,9 @@ generate-docs:
 generate-internals:
 	go generate ./internal/...
 
+generate-cmd:
+	go generate -v ./cmd/...
+
 ######################################################
 ## dev related
 

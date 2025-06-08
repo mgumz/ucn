@@ -11,6 +11,7 @@ import (
 
 const (
 	flagVersion = "print version and exit"
+	flagLicense = "print license and exit"
 
 	flagOfmtEtab   = "use Elastic Tabstops (default)"
 	flagOfmtTSV    = "use tab-separated values"
@@ -27,6 +28,7 @@ const (
 func initFlags(fs *flag.FlagSet, filters *[]filterFunc, printer *print.Func) {
 
 	fs.BoolFunc("v", flagVersion, printVersion)
+	fs.BoolFunc("license", flagLicense, func(_ string) error { printLicense(); return nil })
 
 	// -ofmt.xyz
 	fs.BoolFunc("ofmt.etab", flagOfmtEtab, func(_ string) error { *printer = print.ElasticTabstops; return nil })
