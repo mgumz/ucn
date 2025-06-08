@@ -19,8 +19,6 @@ const (
 	defaultUrl = "https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt"
 
 	codeHeader = `// DO NOT EDIT: This file is generated!
-//
-//go:generate go run gen_data.go -fromWeb > data.go
 
 package unicode
 
@@ -50,9 +48,18 @@ func main() {
 
 	url := flag.String("url", defaultUrl, "url to UnicodeData.txt")
 	doFetchFromWeb := flag.Bool("fromWeb", false, "fetch UnicodeData.txt from web")
+	oFile := flag.String("out", "", "file to write to")
 	flag.Parse()
 
 	r := io.Reader(os.Stdin)
+	owriter := os.Stdout
+	if *oFile != "" {
+		var err error
+		if owriter, err = os.Create(*oFile); err != nil {
+			fmt.Fprintf(os.Stderr, "error creating file %q: %s\n", *oFile, err)
+			os.Exit(13)
+		}
+	}
 
 	if *doFetchFromWeb {
 		req, err := http.Get(*url)
@@ -114,7 +121,7 @@ func main() {
 
 	// phase-3: construct data.go
 	comment := fmt.Sprintf(codeCommentFmt, obuf.Len())
-	fmt.Fprintln(os.Stdout, codeHeader, comment)
+	fmt.Fprintln(owriter, codeHeader, comment)
 
 	for i := 1; obuf.Len() > 0; i++ {
 		sb.Reset()
@@ -136,7 +143,7 @@ func main() {
 			sb.WriteString("\" +")
 		}
 
-		fmt.Fprintln(os.Stdout, sb.String())
+		fmt.Fprintln(owriter, sb.String())
 	}
-	fmt.Fprint(os.Stdout, codeFooter)
+	fmt.Fprint(owriter, codeFooter)
 }

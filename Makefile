@@ -53,11 +53,8 @@ releases/$(PROJECT)-$(VERSION).%.tar.gz: bin/$(PROJECT)-$(VERSION).%
 bin:
 	mkdir $@
 
-generate-docs:
-	go generate ./cmd/$(PROJECT)
-
 generate-internals:
-	go generate ./internal/...
+	go generate -v ./internal/...
 
 generate-cmd:
 	go generate -v ./cmd/...

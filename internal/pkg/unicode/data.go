@@ -1,6 +1,4 @@
 // DO NOT EDIT: This file is generated!
-//
-//go:generate go run gen_data.go -fromWeb > data.go
 
 package unicode
 
