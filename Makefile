@@ -76,55 +76,35 @@ deps-ls-updates:
 compile-analysis: cmd/$(PROJECT)
 	go build -gcflags '-m' ./$^
 
-reports: report-vuln report-gosec
-reports: report-staticcheck report-vet report-ineffassign
-reports: report-cyclo
-reports: report-errcheck report-gocritic
-reports: report-misspell
+# https://github.com/nektos/act
+run-github-workflow-lint:
+	act -j lint --container-architecture linux/amd64
+run-github-workflow-test:
+	act -j test --container-architecture linux/amd64
+run-github-workflow-buildLinux:
+	act -j buildLinux --container-architecture linux/amd64
 
-report-cyclo:
+reports: report-golangci-lint
+reports: report-vuln report-vet
+
+report-golangci-lint:
 	@echo '####################################################################'
-	gocyclo ./cmd/$(PROJECT) ./internal/pkg
-report-misspell:
-	@echo '####################################################################'
-	misspell ./cmd/... ./internal/...
-report-ineffassign:
-	@echo '####################################################################'
-	ineffassign ./cmd/... ./internal/...
-report-vet:
-	@echo '####################################################################'
-	go vet ./cmd/... ./internal/...
-report-staticcheck:
-	@echo '####################################################################'
-	staticcheck ./cmd/... ./internal/...
+	golangci-lint run ./cmd/... ./internal/...
+
 report-vuln:
 	@echo '####################################################################'
 	govulncheck ./cmd/... ./internal/...
-report-gosec:
-	@echo '####################################################################'
-	gosec ./cmd/... ./internal/...
+
 report-grype:
 	@echo '####################################################################'
 	grype .
-report-errcheck:
-	@echo '####################################################################'
-	errcheck -ignorepkg fmt ./...
-report-gocritic:
-	@echo '####################################################################'
-	gocritic check ./cmd/... ./internal/...
 
 fetch-report-tools:
-	go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
-	go install github.com/client9/misspell/cmd/misspell@latest
-	go install github.com/gordonklaus/ineffassign@latest
-	go install honnef.co/go/tools/cmd/staticcheck@latest
 	go install golang.org/x/vuln/cmd/govulncheck@latest
-	go install github.com/securego/gosec/v2/cmd/gosec@latest
-	go install -v github.com/go-critic/go-critic/cmd/gocritic@latest
-	go install github.com/kisielk/errcheck@latest
 
 fetch-report-tool-grype:
 	go install github.com/anchore/grype@latest
+
 
 test:
 	go test -v ./internal/... ./cmd/...

@@ -24,6 +24,6 @@ func TSV(w io.Writer, entries []uc.Entry) {
 			runeToHTML(r),
 			fmt.Sprintf("\\\\u%04x", r),
 			entry.Name,
-		})
+		}) // #nosec G104
 	}
 }

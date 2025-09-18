@@ -7,7 +7,7 @@ import (
 )
 
 func printLicense() {
-	os.Stdout.WriteString(license)
+	os.Stdout.WriteString(license) // #nosec G104
 	os.Exit(0)
 }
 

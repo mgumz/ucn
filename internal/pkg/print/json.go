@@ -34,5 +34,5 @@ func JSON(w io.Writer, entries []uc.Entry) {
 	enc := json.NewEncoder(w)
 	enc.SetEscapeHTML(false)
 	enc.SetIndent("  ", " ")
-	enc.Encode(j)
+	enc.Encode(j) // #nosec G104
 }

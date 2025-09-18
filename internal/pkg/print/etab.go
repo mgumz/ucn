@@ -12,7 +12,15 @@ import (
 // ElasticTabstops prints given runes to io.Writer w
 func ElasticTabstops(w io.Writer, entries []uc.Entry) {
 
-	tw := tabwriter.NewWriter(w, 3, 2, 4, ' ', 0)
+	const (
+		minWidth = 3
+		tabWidth = 2
+		padding  = 4
+		padChar  = ' '
+		flags    = 0
+	)
+
+	tw := tabwriter.NewWriter(w, minWidth, tabWidth, padding, padChar, flags)
 	defer tw.Flush()
 
 	// columns + format of each to print
