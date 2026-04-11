@@ -23,12 +23,22 @@ const (
 	flagFilterStartsWith = "starts-with filter all symbol names for <value>"
 	flagFilterReverse    = "reverse list of symbols"
 	flagFilterLimit      = "limit results to <value> symbols"
+
+	flagSource = "data source: unicode, nerdfont, all"
 )
 
-func initFlags(fs *flag.FlagSet, filters *[]filterFunc, printer *print.Func) {
+const (
+	sourceUnicode  = "unicode"
+	sourceNerdFont = "nerdfont"
+	sourceAll      = "all"
+)
+
+func initFlags(fs *flag.FlagSet, filters *[]filterFunc, printer *print.Func, source *string) {
 
 	fs.BoolFunc("v", flagVersion, printVersion)
 	fs.BoolFunc("license", flagLicense, func(_ string) error { printLicense(); return nil })
+
+	fs.StringVar(source, "source", sourceAll, flagSource)
 
 	// -ofmt.xyz
 	fs.BoolFunc("ofmt.etab", flagOfmtEtab, func(_ string) error { *printer = print.ElasticTabstops; return nil })

@@ -2,9 +2,11 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"os"
 
 	"github.com/mgumz/ucn/internal/pkg/filter"
+	nf "github.com/mgumz/ucn/internal/pkg/nerdfont"
 	"github.com/mgumz/ucn/internal/pkg/print"
 	uc "github.com/mgumz/ucn/internal/pkg/unicode"
 )
@@ -15,13 +17,26 @@ func main() {
 
 	printer := print.Func(print.ElasticTabstops)
 	filters := []filterFunc{}
+	source := sourceAll
 
-	initFlags(flag.CommandLine, &filters, &printer)
+	initFlags(flag.CommandLine, &filters, &printer, &source)
 
 	flag.Parse()
 
 	// input
-	entries := uc.Entries()
+	var entries []uc.Entry
+	switch source {
+	case sourceUnicode:
+		entries = uc.Entries()
+	case sourceNerdFont:
+		entries = nf.Entries()
+	case sourceAll:
+		entries = append(uc.Entries(), nf.Entries()...)
+	default:
+		fmt.Fprintf(os.Stderr, "unknown -source %q (want: %s, %s, %s)\n",
+			source, sourceUnicode, sourceNerdFont, sourceAll)
+		os.Exit(2)
+	}
 
 	// treat regular args as list of codepoints to "filter" on. default: all.
 	// side-effect: the user can "ask" on what the name of of a code point is

@@ -22,6 +22,9 @@ built in code points.
     -ofmt.tsv
         use tab-separated values
 
+    -source value
+        data source: unicode, nerdfont, all (default: all)
+
     -limit value
         limit results to <value> symbols
 
@@ -145,7 +148,7 @@ Search for "upward arrows":
 ```shell
 $> ucn -filter.starts-with "upwards -filter.starts-with "arrow" -limit 5
 
-'͎'    34e     U+034E    &#34e;          \\u34e     COMBINING UPWARDS ARROW BELOW
+''͎'    34e     U+034E    &#34e;          \\u34e     COMBINING UPWARDS ARROW BELOW
 '↑'    2191    U+2191    &UpArrow;       \\u2191    UPWARDS ARROW
 '↟'    219f    U+219F    &Uarr;          \\u219f    UPWARDS TWO HEADED ARROW
 '↥'    21a5    U+21A5    &UpTeeArrow;    \\u21a5    UPWARDS ARROW FROM BAR
@@ -193,6 +196,35 @@ $> ucn -filter.starts-with pi -limit 1000
 
 ## Extras
 
+### Nerd Fonts
+
+In addition to the Unicode Character Database, `ucn` ships names for
+the glyphs bundled in [Nerd Fonts](https://www.nerdfonts.com/). These
+live entirely in Unicode's Private Use Area and only render if a Nerd
+Font is installed on your host — otherwise you'll see tofu (`☐`).
+
+The `-source` flag selects which data set to list:
+
+* `unicode` — only the UCD entries
+* `nerdfont` — only the Nerd Fonts glyphs
+* `all` — both (this is the default)
+
+Example: search Nerd Fonts for `github`:
+
+```shell
+$> ucn -source nerdfont -filter.partial github -limit 5
+
+''    ea84    U+EA84    &#ea84;    \\uea84    COD GITHUB
+''    eaff    U+EAFF    &#eaff;    \\ueaff    COD GITHUB ACTION
+''    eb00    U+EB00    &#eb00;    \\ueb00    COD GITHUB ALT
+''    eba1    U+EBA1    &#eba1;    \\ueba1    COD GITHUB INVERTED
+''    e5fd    U+E5FD    &#e5fd;    \\ue5fd    CUSTOM FOLDER GITHUB
+```
+
+The glyph metadata is sourced from `ryanoasis/nerd-fonts`'
+`glyphnames.json` (MIT-licensed). The pinned upstream version lives in
+`internal/pkg/nerdfont/data_gen.go`; bumping it is an intentional act.
+
 ### Alfred Workflow "Unicode Names"
 
 ![Screenshot Alfred Workflow](./extra/ucn.alfredworkflow/sshot-fs8.png)
@@ -209,6 +241,7 @@ Installation:
 * https://www.unicode.org/charts/
 * https://www.unicode.org/charts/About.html#Search
 * https://symbol.cc
+* https://nerdfonts.com
 
 ## Related
 
