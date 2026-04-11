@@ -19,7 +19,7 @@ type jsonEntry struct {
 
 func JSON(w io.Writer, entries []uc.Entry) {
 
-	j := []jsonEntry{}
+	j := make([]jsonEntry, 0, len(entries))
 	for _, entry := range entries {
 		r := entry.Rune()
 		j = append(j, jsonEntry{
