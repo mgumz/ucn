@@ -20,7 +20,11 @@ func Fuzzy(entries []uc.Entry, filter string) []uc.Entry {
 		names = append(names, entries[i].Name)
 	}
 
-	matches := fuzzy.RankFindNormalizedFold(filter, names)
+	// RankFindFold (not RankFindNormalizedFold): UCD and Nerd Font names
+	// are pure ASCII, so Unicode normalization/accent-folding is dead
+	// weight and keeping the x/text/unicode/norm tables out of the binary
+	// shaves ~73 KB. Verified via a scan of both data sources.
+	matches := fuzzy.RankFindFold(filter, names)
 	sort.Sort(matches)
 
 	filtered := []uc.Entry{}

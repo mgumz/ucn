@@ -17,7 +17,7 @@ func StartsWith(entries []uc.Entry, filter string) []uc.Entry {
 	matches := []uc.Entry{}
 	for _, e := range entries {
 		n := strings.ToLower(e.Name)
-		words := wsRE.Split(n, -1)
+		words := strings.Fields(n)
 		for i := range words {
 			if strings.HasPrefix(words[i], filter) {
 				matches = append(matches, e)
