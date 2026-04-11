@@ -16,7 +16,11 @@ import (
 )
 
 const (
-	defaultUrl = "https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt"
+	// Bump intentionally. Releases: https://www.unicode.org/versions/enumeratedversions.html
+	unicodeRef = "17.0.0"
+
+	defaultUrl = "https://www.unicode.org/Public/" + unicodeRef +
+		"/ucd/UnicodeData.txt"
 
 	codeHeader = `// DO NOT EDIT: This file is generated!
 
